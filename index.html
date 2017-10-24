@@ -3,21 +3,27 @@
 <head>
   <meta charset="utf-8">
   <title>Budget App</title>
+  <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
     <h1>Budget App</h1>
+    <h2>Net Income</h2>
+    <div class="net-income">$1,000.00</div>
   </header>
   <main>
-    <div class="inputs-container">
-      <select>
-        <option value="inc" selected>+</option>
-        <option value="exp">-</option>
-      </select>
-      <input placeholder="Type in an activity..." class="description"></input>
-      <input placeholder="Amount" class="amount"></input>
-    </div>
+    <section class="inputs">
+      <div class="inputs-container">
+        <select>
+          <option value="inc" selected>+</option>
+          <option value="exp">-</option>
+        </select>
+        <input placeholder="Type in an activity..." class="description"></input>
+        <input placeholder="Amount" class="amount"></input>
+      </div>
+    </section>
   </main>
 </body>
 </html>
