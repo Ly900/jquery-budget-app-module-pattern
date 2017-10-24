@@ -2,7 +2,12 @@
   @return mix(white, $color, $percentage);
 }
 
-html, body, div {
+$sm-spacing: .2em;
+$md-spacing: .5em;
+$lg-spacing: .8em;
+$xlg-spacing: 1em;
+
+html, body, div, header, main, h1, h2 {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -18,12 +23,27 @@ body {
 }
 
 header {
+  background: url("../tree-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  font-weight: lighter;
+  min-height: 300px;
+  .budget-info-container {
+    margin: 0 auto;
+    padding: $md-spacing;
+    width: 50%;
+    background: rgba(0, 0, 0, .3);
+    border-radius: 5px;
+  }
   h1 {
     font-family: 'Architects Daughter', cursive;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     text-align: left;
-    margin: .2em;
-    // margin: 1.3em auto;
+    color: #000;
+    text-shadow: 1px 2px 2px #ffa26c;
+    letter-spacing: 2px;
+    margin: 0 $sm-spacing;
   }
   h2 {
     font-size: 1.2rem;
@@ -43,7 +63,7 @@ header {
 .inputs-container {
   width: 100%;
   max-width: 820px;
-  padding: .8em;
+  padding: $lg-spacing;
   margin: 0 auto;
   display: flex;
   align-items: stretch;
