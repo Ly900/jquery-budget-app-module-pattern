@@ -1,4 +1,4 @@
-html, body, div, header, main, h1, h2 {
+html, body, div, header, main, section, h1, h2, h3 {
   margin: 0;
   padding: 0;
   box-sizing: border-box; }
@@ -16,11 +16,14 @@ header {
   background-size: cover;
   color: #fff;
   font-weight: lighter;
-  min-height: 300px; }
-  header .budget-info-container {
+  min-height: 275px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; }
+  header .budget {
     margin: 0 auto;
     padding: 0.5em;
-    width: 50%;
+    width: 75%;
     background: rgba(0, 0, 0, 0.3);
     border-radius: 5px; }
   header h1 {
@@ -33,27 +36,56 @@ header {
     margin: 0 0.2em; }
   header h2 {
     font-size: 1.2rem;
-    text-align: center; }
-  header .net-income {
+    text-align: center;
+    letter-spacing: 2px; }
+  header h3 {
     width: 100%;
     margin: 0 auto;
     text-align: center;
     font-size: 3rem; }
+  header .income-expenses {
+    width: 50%;
+    margin: 0 auto; }
+  header .income-expenses .inc-exp-parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 0.5em; }
+    header .income-expenses .inc-exp-parent:last-of-type {
+      margin-bottom: 0; }
+    @media (min-width: 560px) {
+      header .income-expenses .inc-exp-parent {
+        flex-direction: row;
+        text-align: unset; } }
+  header .income-expenses .inc-exp-parent span {
+    padding: 0 0.5em; }
+  header .income-expenses .income {
+    background: RGBA(11, 146, 67, 0.9);
+    padding: 0.8em 0.5em;
+    padding: 0.5em 0; }
+  header .income-expenses .label,
+  header .income-expenses .amount {
+    margin: 0.2em 0; }
+  header .income-expenses .expenses {
+    background: RGBA(227, 27, 37, 0.9);
+    padding: 0.8em 0.5em;
+    padding: 0.5em 0; }
 
-.inputs {
+main .inputs {
   width: 100%;
-  background: #f0f0f0; }
-
-.inputs-container {
+  background: #f0f0f0;
+  box-shadow: 0 0 2px RGBA(128, 128, 128, 0.5); }
+main .inputs-container {
   width: 100%;
   max-width: 820px;
-  padding: 0.8em;
+  padding: 0.8em 0;
   margin: 0 auto;
   display: flex;
   align-items: stretch;
   justify-content: space-around;
   font-family: 'Raleway', sans-serif; }
-  .inputs-container select {
+  main .inputs-container select {
     width: 10%;
     padding: .5em;
     border: none;
@@ -61,7 +93,7 @@ header {
     font-size: 1.5rem;
     box-shadow: 0 1px 10px RGBA(128, 128, 128, 0.2);
     border-radius: 5px; }
-  .inputs-container input.description {
+  main .inputs-container input.description {
     width: 50%;
     padding: .5em;
     border: none;
@@ -69,7 +101,7 @@ header {
     box-shadow: 0 1px 10px RGBA(128, 128, 128, 0.2);
     border-radius: 5px;
     font-family: 'Raleway', sans-serif; }
-  .inputs-container input.amount {
+  main .inputs-container input.amount {
     width: 20%;
     padding: .5em;
     border: none;
