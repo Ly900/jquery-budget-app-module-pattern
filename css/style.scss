@@ -102,8 +102,8 @@ header {
 main {
   .inputs {
     width: 100%;
-    background: tint(#eee, 10%);
-    box-shadow: 0 0 2px RGBA(128, 128, 128, .5);
+    background: #000;
+    box-shadow: 0 0 2px RGBA(1, 1, 1, 1.00);
   }
   .inputs-container {
     width: 100%;
