@@ -114,32 +114,31 @@ main {
     align-items: stretch;
     justify-content: space-around;
     font-family: 'Raleway', sans-serif;
+    select,
+    input,
+    button {
+      padding: $md-spacing;
+      border: none;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      box-shadow: 0 1px 10px RGBA(128, 128, 128, .2);
+      font-family: 'Raleway', sans-serif;
+      background: #fff;
+      i {
+        color: RGBA(26, 146, 60, 1.00);
+      }
+    }
+    button:hover {
+      cursor: pointer;
+    }
     select {
       width: 10%;
-      padding: .5em;
-      border: none;
-      background: #fff;
-      font-size: 1.5rem;
-      box-shadow: 0 1px 10px RGBA(128, 128, 128, .2);
-      border-radius: 5px;
     }
     input.description {
       width: 50%;
-      padding: .5em;
-      border: none;
-      font-size: 1.5rem;
-      box-shadow: 0 1px 10px RGBA(128, 128, 128, .2);
-      border-radius: 5px;
-      font-family: 'Raleway', sans-serif;
     }
     input.amount {
       width: 20%;
-      padding: .5em;
-      border: none;
-      font-size: 1.5rem;
-      box-shadow: 0 1px 10px RGBA(128, 128, 128, .2);
-      border-radius: 5px;
-      font-family: 'Raleway', sans-serif;
     }
   }
 }
