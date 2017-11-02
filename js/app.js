@@ -35,9 +35,15 @@ var UIController = (function() {
 //Global App Controller
 var controller = (function(budgetCtrl, UICtrl) {
 
-  var DOM = UICtrl.getDOMstrings();
-
-
+  function setUpEventListeners() {
+    var DOM = UICtrl.getDOMstrings();
+    DOM.$addButton.on("click", ctrlAddItem);
+    DOM.$body.on("keypress", function(e) {
+      if (e.keyCode === 13 || e.which === 13) {
+        ctrlAddItem();
+      }
+    });
+  }
 
   var ctrlAddItem = function() {
 
@@ -54,13 +60,6 @@ var controller = (function(budgetCtrl, UICtrl) {
 
   }
 
-  DOM.$addButton.on("click", ctrlAddItem);
-
-  DOM.$body.on("keypress", function(e) {
-    if (e.keyCode === 13 || e.which === 13) {
-      ctrlAddItem();
-    }
-  });
 
   function test() {
     console.log("test");
