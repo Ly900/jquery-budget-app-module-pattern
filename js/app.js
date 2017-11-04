@@ -6,6 +6,7 @@ var budgetController = (function() {
 
 // UI Controller
 var UIController = (function() {
+
   var DOMstrings = {
     $inputType: $("select.type"),
     $inputDescription: $(".description"),
@@ -13,7 +14,8 @@ var UIController = (function() {
     $addButton: $("#add-btn"),
     $body: $("body")
   }
-  function getInput() {
+
+  var getInput = function() {
     return {
       type: DOMstrings.$inputType.val(),  // Will return "inc" or "exp"
       description: DOMstrings.$inputDescription.val(),
@@ -21,7 +23,7 @@ var UIController = (function() {
     }
   }
 
-  function getDOMstrings() {
+  var getDOMstrings = function() {
     return DOMstrings;
   }
 
@@ -35,7 +37,7 @@ var UIController = (function() {
 //Global App Controller
 var controller = (function(budgetCtrl, UICtrl) {
 
-  function setUpEventListeners() {
+  var setUpEventListeners = function() {
     var DOM = UICtrl.getDOMstrings();
     DOM.$addButton.on("click", ctrlAddItem);
     DOM.$body.on("keypress", function(e) {
@@ -45,11 +47,15 @@ var controller = (function(budgetCtrl, UICtrl) {
     });
   }
 
+  var init = function() {
+    setUpEventListeners();
+  }
+
   var ctrlAddItem = function() {
 
       // 1. Get field input data.
       var userInput = UICtrl.getInput();
-      console.log(UICtrl.getInput());
+      console.log(userInput);
       // 2. Add item to budget controller.
 
       // 3. Add item to UI controller.
@@ -60,13 +66,14 @@ var controller = (function(budgetCtrl, UICtrl) {
 
   }
 
-
-  function test() {
+  var test = function() {
     console.log("test");
   }
 
   return {
-
+    init: init
   }
 
 })(budgetController, UIController);
+
+controller.init();
